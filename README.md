@@ -22,7 +22,7 @@ The singer data were scraped from Wikipedia using the [Wikipedia API](https://ww
 ## Processing search query
 The sinhala language search query submitted through the web interface are processed by ```query_processor.py``` to retrive the matching results from the indexed elasticsearxh database. The query first goes through an initial preprocessing step to remove stop words and punctuation. Thr next intent classification step that divides all queries into two possible types. They are:
 <ul>
-  <li>Exact phrase search queries. ex: ග්‍රැමී දිනා ඇත<\li> 
-  <li>Multi match search queries ex: එමිලි බාර්කර්ගේ ප්‍රසිද්ධ ගීත, ඇඩෙල්ගේ දරුවාගේ නම කුමක්ද?<\li> 
+  <li>Exact phrase search queries. ex: ග්‍රැමී දිනා ඇත</li> 
+  <li>Multi match search queries ex: එමිලි බාර්කර්ගේ ප්‍රසිද්ධ ගීත, ඇඩෙල්ගේ දරුවාගේ නම කුමක්ද?</li> 
 
 Finally, Elasticsearch DSL queries are executed to retrive documents belonging to the relavant type of query from the database. 
