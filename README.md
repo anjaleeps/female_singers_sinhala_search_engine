@@ -27,3 +27,12 @@ The sinhala language search query submitted through the web interface are proces
 </ul>
 
 Finally, Elasticsearch DSL queries are executed to retrive documents belonging to the relavant type of query from the database. 
+
+## Features of the search engine
+<ul>
+  <li>Query preprocessing (stopword and punctuation removal)</li>
+  <li>Intent classification</li>
+  <li>Support for synonyms (similarity matrix calculated with a provided set of keywords for each word allows the system to support synonymous queries such as ඇඩෙල්ගේ මුල් ජීවිතය and ඇඩෙල්ගේ ළමා කාලය)</li>
+  <li>The above characteristic also allows the system to provide good results despite spelling errors in the query.</li>
+</ul>
+
