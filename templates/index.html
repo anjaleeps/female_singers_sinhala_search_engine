@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <title>Search Engine</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body class='m-4 p-4'>
+
+  <div class="row">
+    <div class='col-md-2'></div>
+    <div class='col-md-8'>
+      <div style='text-align:center;'>
+        <h3 class='mb-4'>ඉංග්‍රීසි ගායිකාවන් ගැන විස්තර සොයන්න</h3>
+        <form action="http://localhost:5000/" method="post" class="row mt-4">
+            <div class="col-md-10" >
+              <input class="border border-dark p-2 w-100" type="text" name="search" placeholder="මූල පද ඇතුලත් කරන්න" value="{{query}}"/>
+            </div>
+            <div class="col-md-2">
+              <input class="btn btn-warning p-2" type="submit" value="Search" name="search_form"/>
+            </div>
+        </form>
+      </div>
+
+      {% if singers|length > 0 %}
+
+      <div class="row" style='font-size:12px;'>
+        <div class="col">
+            {% for singer in singers %}
+            <div class="card shadow-lg bg-white rounded mb-3 w-100">
+              <div class="card-body">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item h6 mb-1"><b>නම</b> : <a href={{singer.link}}>{{ singer.නම}}</a></li>
+                </ul>
+                {% for key, value in singer.items() %}
+                <ul class="list-group list-group-flush pl-3">
+                  {% if value|int == 0 and value|length > 200 %}
+                    <li class='mt-1'><b>{{ key }}</b> : {{ value|truncate}}</li>
+                  {% elif key != 'නම' and key != 'link' %}
+                    <li class='mt-1'><b>{{ key }}</b> : {{ value }}</li>
+                  {% endif %}
+                </ul>
+                {% endfor %}
+              </div>
+            </div>
+            {% endfor %}
+        </div>
+      </div>
+      {% else %}
+      <div>
+        <div class="card" style="width: 50rem;">
+              <div class="card-body">
+                <p>ගැළපෙන ප්‍රතිඵල නැත</p>
+              </div>
+            </div>
+      </div>
+      {% endif %}
+    </div>
+    <div class='col-md-2'></div>
+  </div>
+
+</body>
+</html>

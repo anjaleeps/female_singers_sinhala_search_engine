@@ -1,0 +1,19 @@
+{
+  "name": "recommendersystem",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/translate": "^6.3.1",
+    "axios": "^0.24.0",
+    "objects-to-csv": "^1.3.6",
+    "wtf-plugin-person": "^0.2.0",
+    "wtf-plugin-summary": "^0.3.0",
+    "wtf_wikipedia": "^9.0.1"
+  }
+}
