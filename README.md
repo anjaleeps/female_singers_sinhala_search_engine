@@ -25,4 +25,5 @@ The sinhala language search query submitted through the web interface are proces
   <li>Exact phrase search queries. ex: ග්‍රැමී දිනා ඇත</li> 
   <li>Multi match search queries ex: එමිලි බාර්කර්ගේ ප්‍රසිද්ධ ගීත, ඇඩෙල්ගේ දරුවාගේ නම කුමක්ද?</li> 
 </ul>
+
 Finally, Elasticsearch DSL queries are executed to retrive documents belonging to the relavant type of query from the database. 
